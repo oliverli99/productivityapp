@@ -2,6 +2,11 @@ function addTask(){
   //grab input text  
   var input = document.getElementById("input").value; 
 
+
+  
+
+
+
   //grab list element 
   var ul = document.getElementById("list");
   //creating list element

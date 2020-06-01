@@ -9,20 +9,20 @@ html {
   position: relative; 
   color: white; 
   font-family: 'Roboto', sans-serif;
-  font-size: 2em; 
+  font-size: 1em; 
 
 }
 
 .bottom-text{ 
   position: absolute; 
-  top: 80%; 
-  left: 47%; 
+  top: 79.5%; 
+  left: 48%; 
 }
 
 .centered-text{ 
   position: absolute; 
-  top: 44%; 
-  left: 48%; 
+  top: 45%; 
+  left: 48.5%; 
 }
 
 .header-img{ 
@@ -35,19 +35,19 @@ input:focus{
 
 input{
   font-family: 'Roboto', sans-serif;
-  font-size: 2em; 
+  font-size: 1em; 
   border: 0; 
-  padding-left: 7em; 
+  padding-left: 8em; 
 }
 
 li{ 
-  font-size: 2em; 
+  font-size: 1em; 
   margin: 0; 
 }
 
 li:hover{
   text-decoration: line-through; 
-  text-decoration-color: lightgreen; 
+  text-decoration-color: #F7941D; 
 }
 
 li:not(:last-child) {
