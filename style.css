@@ -1,6 +1,6 @@
-*{
-  /* border: 1px dotted green;  */
-}
+/* *{
+  border: 1px dotted green; 
+} */
 
 html {
   font-family: 'Roboto', sans-serif;
@@ -22,9 +22,6 @@ li p{
 }
 
 
-.add-item{ 
-  /* outline: 5px dotted green;   */
-}
 
 .header{ 
   /* outline: 5px dotted green;  */
@@ -82,9 +79,20 @@ body{
   text-align: center;
 }
 
+.varun-max {
+  text-align: left; 
+  max-width: 35%; 
+
+  /*0 is nothing from the top and auto centers the div*/
+  margin: 0 auto; 
+  height: auto; 
+
+}
+
 #particles-js{ 
 	width:100%;
 	height: 100%; 
 	background-color: #19315c; 
 	background-size: cover;
 }	
+

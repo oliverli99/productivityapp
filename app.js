@@ -1,12 +1,41 @@
-const UNCHECK = "far fa-circle";
-const CHECK = "fas fa-check-circle";
+const UNCHECK = "fa-circle";
+const CHECK = "fa-check-circle";
 const LINE_THROUGH = "lineThrough";
 const list = document.getElementById("list"); 
 const input = document.getElementById("input"); 
 
 
-var data = []
-var id = 0; 
+var data, id; 
+
+
+var storage = localStorage.getItem("TODO"); 
+
+//check if storage is not empty 
+if (storage){ 
+  //JSON string to javascript object
+  data = JSON.parse(storage); 
+  //set id to the last one in the list 
+  id = data.length;
+  loadList(data);  
+
+}
+
+//if empty / first time user
+else{ 
+  data = []
+  id = 0; 
+
+}
+
+//takes in an array
+function loadList(array){ 
+  array.forEach(function(item){ 
+    addToDo(item.name, item.id, item.done, item.trash); 
+  }); 
+
+}
+
+
 
 
 function addToDo(toDo, id, done, trash) { 
@@ -20,9 +49,9 @@ function addToDo(toDo, id, done, trash) {
 
   const item = `
             <li class = "item"> 
-                <i class= "${DONE}" job = "complete" id = "${id}"></i>
-                <p class = "${LINE}"> ${toDo} </p>
-                <i class="fas fa-trash job = "delete" id = "${id}"></i>
+                <i class = "far ${DONE}" job = "complete" id = "${id}"></i>
+                <p class = "text" class = "${LINE}"> ${toDo} </p>
+                <i class="fas fa-trash" job = "delete" id = "${id}"></i>
             </li>
   `;
   const position = "beforeend"; 
@@ -34,7 +63,8 @@ function addToDo(toDo, id, done, trash) {
 document.addEventListener("keyup", function(event) { 
   toDo = document.getElementById("input").value; 
   if(event.keyCode == 13){ 
-    addToDo(toDo)
+
+    addToDo(toDo,id,false,false); 
 
     data.push({
       name: toDo, 
@@ -45,61 +75,49 @@ document.addEventListener("keyup", function(event) {
       trash: false
     });
     
+    //add item to local storage. overwrites previous 
+    localStorage.setItem("TODO", JSON.stringify(data)); 
 
     // increment id 
     id++; 
 
   }
 
-})
+});
+
+
+
 
 
 function completeToDo(element){ 
-  element.classList.toggle(UNCHECK); 
   element.classList.toggle(CHECK); 
-  element.parentNode.qu
-
-
+  element.classList.toggle(UNCHECK); 
+  element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+  data[element.id].done =  !data[element.id].done;  
+  
 }
 
+function removeToDo(element){ 
+  element.parentNode.parentNode.removeChild(element.parentNode); 
+  data[element.id].trash = true; 
+}
+
+list.addEventListener("click", function (event){
+  const element = event.target; // return clicked element inside list
+  const elementJob = element.attributes.job.value; //complete or delete
+  console.log(elementJob); 
+  if(elementJob == "complete"){ 
+    completeToDo(element); 
+  }
+  else if
+    (elementJob == "delete"){
+      removeToDo(element); 
+    }
+  
+  //overwrites previous
+  localStorage.setItem("TODO", JSON.stringify(data)); 
+
+
+}); 
  
 
-
-// addToDo("stuff", 1, false, false); 
-
-
-
-// function addTask(){ 
-//   //grab input text  
-//   var input = document.getElementById("input").value; 
-
-
-  
-
-
-
-//   //grab list element 
-//   var ul = document.getElementById("list");
-//   //creating list element
-//   var li = document.createElement("LI");
-//   //append the input text to list element 
-//   li.appendChild(document.createTextNode(input));
-//   //append list item to unordered list
-//   ul.appendChild(li);  
-
-//   //set input field to null 
-//   document.getElementById("input").value = "";
-  
-//   // set the li objects with attribute onclick. give ability to be removed. 
-//   li.onclick = function(e){
-//     e.target.parentElement.removeChild(e.target);
-//   };
-// }
-
-// document.body.onkeyup = function(e) { 
-//   if(e.keyCode == 13){ 
-//     addTask(); 
-//   }
-
-
-// }; 

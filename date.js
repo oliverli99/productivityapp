@@ -39,7 +39,7 @@ var minutes = d.getMinutes();
 convertMinutes(); 
 
 var amOrPm = (d.getHours() < 12) ? "AM" : "PM";
-var hour = (d.getHours() < 12) ? d.getHours() : d.getHours() - 12;
+var hour = d.getHours() % 12 || 12;
 var time = hour + ':' + minutes + ' ' + amOrPm;
 
 document.getElementById("date").innerHTML = day + ", " + String(d.getMonth() + 1) + "/" + d.getDate();  
