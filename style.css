@@ -1,6 +1,29 @@
+*{
+  /* border: 1px dotted green;  */
+}
+
 html {
   font-family: 'Roboto', sans-serif;
   color: black; 
+}
+
+li i{
+  display: inline;
+}
+
+
+li p{ 
+  display: inline; 
+}
+
+.lineThrough{ 
+  text-decoration: line-through;
+  color: grey;  
+}
+
+
+.add-item{ 
+  /* outline: 5px dotted green;   */
 }
 
 .header{ 
@@ -16,7 +39,7 @@ html {
 .bottom-text{ 
   position: absolute; 
   top: 79.5%; 
-  left: 48%; 
+  left: 47.6%; 
 }
 
 .centered-text{ 
@@ -40,15 +63,11 @@ input{
   padding-left: 8em; 
 }
 
+
 li{ 
   font-size: 1em; 
-  margin: 0; 
 }
 
-li:hover{
-  text-decoration: line-through; 
-  text-decoration-color: #F7941D; 
-}
 
 li:not(:last-child) {
   margin-bottom: 10px;
