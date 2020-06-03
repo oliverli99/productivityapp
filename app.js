@@ -8,7 +8,12 @@ const input = document.getElementById("input");
 var data, id; 
 
 
+// clear local storage
+// localStorage.clear(); 
+
+
 var storage = localStorage.getItem("TODO"); 
+
 
 //check if storage is not empty 
 if (storage){ 
@@ -34,7 +39,6 @@ function loadList(array){
   }); 
 
 }
-
 
 
 
@@ -104,7 +108,7 @@ function removeToDo(element){
 
 list.addEventListener("click", function (event){
   const element = event.target; // return clicked element inside list
-  const elementJob = element.attributes.job.value; //complete or delete
+  const elementJob = element.getAttribute("job"); //complete or delete
   console.log(elementJob); 
   if(elementJob == "complete"){ 
     completeToDo(element); 
@@ -119,5 +123,3 @@ list.addEventListener("click", function (event){
 
 
 }); 
- 
-

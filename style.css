@@ -2,8 +2,11 @@
   border: 1px dotted green; 
 } */
 
+
+
+
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Avenir Next", Helevetica, sans-serif;
   color: black; 
 }
 
@@ -16,9 +19,17 @@ li p{
   display: inline; 
 }
 
+
+
 .lineThrough{ 
   text-decoration: line-through;
   color: grey;  
+}
+
+
+.fas.fa-trash{ 
+  text-align: right;   
+
 }
 
 
@@ -82,7 +93,6 @@ body{
 .varun-max {
   text-align: left; 
   max-width: 35%; 
-
   /*0 is nothing from the top and auto centers the div*/
   margin: 0 auto; 
   height: auto; 
