@@ -8,8 +8,8 @@ const input = document.getElementById("input");
 var data, id; 
 
 
-// clear local storage
-
+// // clear local storage
+// localStorage.clear(); 
 
 var storage = localStorage.getItem("TODO"); 
 
@@ -53,10 +53,12 @@ function addToDo(toDo, id, done, trash) {
   const item = `
             <li class = "item"> 
                 <i class = "far ${DONE}" job = "complete" id = "${id}"></i>
-                <p class = "text" class = "${LINE}"> ${toDo} </p>
+                <p class = "text ${LINE}"> ${toDo} </p>
                 <i class="fas fa-trash" job = "delete" id = "${id}"></i>
             </li>
   `;
+
+  console.log(item); 
   const position = "beforeend"; 
 
   list.insertAdjacentHTML(position, item); 
@@ -96,7 +98,7 @@ function completeToDo(element){
   element.classList.toggle(CHECK); 
   element.classList.toggle(UNCHECK); 
   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
-  data[element.id].done =  !data[element.id].done;  
+  data[element.id].done = !data[element.id].done;  
   
 }
 
@@ -108,7 +110,6 @@ function removeToDo(element){
 list.addEventListener("click", function (event){
   const element = event.target; // return clicked element inside list
   const elementJob = element.getAttribute("job"); //complete or delete
-  console.log(elementJob); 
   if(elementJob == "complete"){ 
     completeToDo(element); 
   }
