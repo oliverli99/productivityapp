@@ -9,7 +9,6 @@ var data, id;
 
 
 // clear local storage
-// localStorage.clear(); 
 
 
 var storage = localStorage.getItem("TODO"); 
@@ -123,3 +122,5 @@ list.addEventListener("click", function (event){
 
 
 }); 
+
+

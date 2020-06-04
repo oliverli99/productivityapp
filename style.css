@@ -3,7 +3,30 @@
 } */
 
 
+#temperature{ 
+  font-family: "Avenir Next", Helevetica, sans-serif;
+  color: white; 
+  z-index: 100;
+  position: absolute;
+  top: 3%; 
+  left: 33%; 
+  font-size: 0.85em;
+  font-weight: 550;  
 
+}
+
+#location{ 
+  font-family: "Avenir Next", Helevetica, sans-serif;
+  color: black;
+  z-index: 100;
+  font-size: 0.75em;
+  position: absolute;
+  top: 23%; 
+  left: 58.75%;  
+  font-weight: 550;  
+
+
+}
 
 html {
   font-family: "Avenir Next", Helevetica, sans-serif;
@@ -52,7 +75,7 @@ li p{
 
 .centered-text{ 
   position: absolute; 
-  top: 45%; 
+  top: 46.5%; 
   left: 48.5%; 
 }
 
