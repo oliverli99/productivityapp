@@ -10,7 +10,8 @@ const input = document.getElementById("input");
 var data, id; 
 
 
-// // clear local storage
+// clear local storage
+// localStorage.clear(); 
 
 var storage = localStorage.getItem("TODO"); 
 
