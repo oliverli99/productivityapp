@@ -97,7 +97,11 @@ document.addEventListener("keyup", function(event) {
 });
 
 
+function clearStorage(){ 
+  localStorage.clear(); 
+  location.reload(); 
 
+}
 
 
 function completeToDo(element){ 
@@ -125,7 +129,11 @@ list.addEventListener("click", function (event){
   else if
     (elementJob == "delete"){
       removeToDo(element); 
+      console.log('worked'); 
     }
+
+
+  
   
   //overwrites previous
   localStorage.setItem("TODO", JSON.stringify(data)); 
@@ -133,4 +141,14 @@ list.addEventListener("click", function (event){
 
 }); 
 
-console.log(data); 
+var refresh = document.getElementById("refresh"); 
+
+refresh.addEventListener("click",function(event){ 
+  const element = event.target; // return clicked element inside list
+  const elementJob = element.getAttribute("job"); //complete or delete
+  if 
+  (elementJob == "refresh"){   
+    clearStorage(); 
+  }
+}); 
+

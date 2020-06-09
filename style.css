@@ -2,19 +2,22 @@
   border: 1px dotted green; 
 } */
 
+#refresh{ 
+  color: #2258a9;
+}
 
 a:link{ 
-  color: #f7941d;
+  color: #2258a9;
   text-decoration: none;
 }
 
 a:active{ 
-  color: #f7941d;
+  color: #2258a9;
   text-decoration: none;
 }
 
 a:visited{ 
-  color: #f7941d; 
+  color: #2258a9; 
   text-decoration: none;
 
 }

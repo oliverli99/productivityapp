@@ -7,17 +7,17 @@ html {
 
 
 a:link{ 
-  color: #f7941d;
+  color: #2258a9;
   text-decoration: none;
 }
 
 a:active{ 
-  color: #f7941d;
+  color: #2258a9;
   text-decoration: none;
 }
 
 a:visited{ 
-  color: #f7941d; 
+  color: #2258a9; 
   text-decoration: none;
 
 }
@@ -26,7 +26,6 @@ a:visited{
   height: 100px;
   padding-top: 10px; 
   color: white; 
-  background: -webkit-linear-gradient(#3EADCF, #ABE9CD);
   font-size: 30px; 
   text-align: center;
   background-image: linear-gradient(to right, #ffaf7a, #ff6600); 
