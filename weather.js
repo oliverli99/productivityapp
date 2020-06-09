@@ -12,13 +12,10 @@ function getWeather(){
   var api = "https://api.openweathermap.org/data/2.5/weather"; 
   var apiKey ="1a13247695e35ba6373838d8f1384ea5";
 
-
   // returns lat and long coords 
   navigator.geolocation.getCurrentPosition(success, error); 
 
-
   function success(position) {
-
     var latitude = position["coords"]["latitude"]; 
     var longitude = position["coords"]["longitude"]; 
   
@@ -40,8 +37,6 @@ function getWeather(){
     location.innerHTML = "Unable to retrieve your location";
   }
   
-
-
 } 
 
 

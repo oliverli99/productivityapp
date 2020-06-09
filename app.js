@@ -1,3 +1,5 @@
+// @ts-check
+
 const UNCHECK = "fa-circle";
 const CHECK = "fa-check-circle";
 const LINE_THROUGH = "lineThrough";
@@ -9,7 +11,6 @@ var data, id;
 
 
 // // clear local storage
-// localStorage.clear(); 
 
 var storage = localStorage.getItem("TODO"); 
 
@@ -41,6 +42,8 @@ function loadList(array){
 
 
 
+
+
 function addToDo(toDo, id, done, trash) { 
 
   // true: false 
@@ -58,7 +61,6 @@ function addToDo(toDo, id, done, trash) {
             </li>
   `;
 
-  console.log(item); 
   const position = "beforeend"; 
 
   list.insertAdjacentHTML(position, item); 
@@ -70,14 +72,17 @@ document.addEventListener("keyup", function(event) {
   if(event.keyCode == 13){ 
 
     addToDo(toDo,id,false,false); 
-
+    var dateobj= new Date(); 
     data.push({
       name: toDo, 
       id: id, 
 
       // user just entered the to do, make them both false. 
       done: false,
-      trash: false
+
+      trash: false, 
+      init: dateobj.getTime(), 
+      finish: 0
     });
     
     //add item to local storage. overwrites previous 
@@ -103,8 +108,11 @@ function completeToDo(element){
 }
 
 function removeToDo(element){ 
+  var dateobj = new Date(); 
   element.parentNode.parentNode.removeChild(element.parentNode); 
   data[element.id].trash = true; 
+  data[element.id].finish = dateobj.getTime(); 
+
 }
 
 list.addEventListener("click", function (event){
@@ -124,4 +132,4 @@ list.addEventListener("click", function (event){
 
 }); 
 
-
+console.log(data); 
