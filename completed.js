@@ -74,6 +74,6 @@ function loadCompletionTimes(array){
   
   avgCompletionTime = Math.round(totalCompletionTime/array.length/1000); 
 
-  document.getElementById("completionTime").innerHTML = "Average Time of Completion (seconds): " + String(avgCompletionTime) + " seconds"; 
+  document.getElementById("completionTime").innerHTML = "Average Time of Completion (seconds): " + String(avgCompletionTime); 
 
 } 
